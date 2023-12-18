@@ -74,7 +74,7 @@
     <p class="card-price">Ціна від: {{ tour[4] }} грн</p>
     <hr>
     <form action="{{ url_for('save_tour', tour_id=tour[0]) }}" method="POST">
-        <input type="submit" value="Зберегти тур" class="btn-primary btn-sn" onclick="return confirm('Ви впевнені, що хочете зберегти цей тур?')">
+        <input type="submit" value="Забронювати тур" class="btn-primary btn-sn" onclick="return confirm('Ви впевнені, що хочете забронювати цей тур?')">
     </form>
 
 </div>

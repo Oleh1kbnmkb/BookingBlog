@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, redirect, send_from_directory, url_for, session, abort
+from flask import Flask, render_template, request, flash, redirect, send_from_directory, url_for, abort
 from werkzeug.utils import secure_filename
 
 import os
@@ -6,7 +6,7 @@ import sqlite3
 
 app = Flask(__name__)
 
-# Configuration for file uploads
+
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'jpg', 'jpeg', 'png', 'gif'}
 
