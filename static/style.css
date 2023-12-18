@@ -1,0 +1,27 @@
+.container {
+    overflow: hidden;
+    background-color: rgb(13, 86, 242);
+}
+
+
+.container a {
+    float: left;
+    color: aliceblue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+.container a.active {
+    background-color: rgb(5, 14, 145);
+    color: white;
+  }
+
+
+
+.container a:hover {
+    background-color: #ddd;
+    color: black;
+}

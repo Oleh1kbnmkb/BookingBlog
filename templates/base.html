@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Blog</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<style>
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+
+th {
+    background-color: #FFD700;
+    color: #333;
+    padding: 10px;
+}
+
+
+tbody tr {
+    background-color: #F5F5F5;
+}
+
+
+td {
+    padding: 8px;
+}
+
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+</style>
+
+
+
+
+<div class="container">
+    <a class="active" href="/">Головна</a>
+    <a href="/forbidden_tours">Забронованні тури</a>
+    <a href="/add_tours">Додати тур</a>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>№</th>
+        <th>Назва піци</th>
+        <th>Опис</th>
+        <th>Ціна</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for data in tours_saved %}
+    <tr>
+        <td>{{ data[1] }}</td>
+        <td>{{ data[2] }}</td>
+        <td>{{ data[3] }}</td>
+        <td>{{ data[4] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+
+</body>
+</html>

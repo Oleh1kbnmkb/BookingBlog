@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Додати тур</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <a class="active" href="/">Головна</a>
+    <a href="/forbidden_tours">Забронованні тури</a>
+    <a href="/add_tours">Додати тур</a>
+</div>
+<br>
+<form method="post" action="/add_tours/" enctype="multipart/form-data">
+    <label for="photo">Фото:</label>
+    <input type="file" name="photo" accept="image/*" required>
+
+    <label for="name">Назва:</label>
+    <input type="text" name="name" required>
+
+    <label for="description">Опис:</label>
+    <textarea name="description" required></textarea>
+
+    <label for="price">Ціна:</label>
+    <input type="text" name="price" required>
+
+    <button type="submit">Додати тур</button>
+</form>
+
+</body>
+</html>

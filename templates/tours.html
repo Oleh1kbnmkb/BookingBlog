@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Деталі туру</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        .tour-details {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .card-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff0000;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-danger:hover {
+            background-color: #bd2130;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a class="active" href="/">Головна</a>
+    <a href="/forbidden_tours">Забронованні тури</a>
+    <a href="/add_tours">Додати тур</a>
+</div>
+
+<div class="tour-details">
+    <img src="{{ url_for('uploaded_file', filename=tour[1]) }}" class="card-img-top" alt="Tour Image">
+    <h2 class="card-title">{{ tour[2] }}</h2>
+    <p class="card-text">{{ tour[3] }}</p>
+    <p class="card-price">Ціна від: {{ tour[4] }} грн</p>
+    <hr>
+    <form action="{{ url_for('save_tour', tour_id=tour[0]) }}" method="POST">
+        <input type="submit" value="Зберегти тур" class="btn-primary btn-sn" onclick="return confirm('Ви впевнені, що хочете зберегти цей тур?')">
+    </form>
+
+</div>
+
+</body>
+</html>
